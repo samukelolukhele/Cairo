@@ -1,7 +1,8 @@
-import useIsMobile from "../utils/hooks/isMobile";
+import useIsMobile from "../../utils/hooks/isMobile";
 import About from "./About";
 import Featured from "./Featured";
 import Hero from "./Hero";
+import Info from "./Info";
 import MobileHero from "./MobileHero";
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
   return (
     <>
       {isMobile ? <MobileHero /> : <Hero />}
+      <Info />
       <Featured />
       {/* <About /> */}
     </>

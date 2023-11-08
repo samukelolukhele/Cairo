@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Container from "../components/Container";
-import Section from "../components/Section";
-import products from "../utils/products";
+import Container from "../../components/Container";
+import Section from "../../components/Section";
+import products from "../../utils/products";
 
 const Featured = () => {
   return (
