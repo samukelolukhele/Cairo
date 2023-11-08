@@ -3,9 +3,9 @@ import { BsSearch, BsBag } from "react-icons/bs";
 const Navbar = () => {
   return (
     <header className="bg-black w-full">
-      <nav className="flex justify-between items-center w-full container border-b-[1px] border-white bg-black">
+      <nav className="flex justify-between items-center mx-8 !md:mx-0 md:container border-b-[1px] border-white">
         <img src="/assets/logo.svg" alt="cairo_logo" className="w-24" />
-        <ul className="flex gap-12 font-raleway text-white items-center text-xl">
+        <ul className="hidden md:flex flex-col md:flex-row gap-12 font-raleway text-white items-center text-xl">
           <a href="/">Men</a>
           <a href="/">Women</a>
           {/* <a href="/">Kids</a> */}
