@@ -1,5 +1,4 @@
 import Section from "../../components/Section";
-import Container from "../../components/Container";
 import { BsArrowRight } from "react-icons/bs";
 
 const About = () => {

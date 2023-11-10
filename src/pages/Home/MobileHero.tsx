@@ -1,15 +1,14 @@
-import React from "react";
 import Section from "../../components/Section";
 import { Link } from "react-router-dom";
 
 const MobileHero = () => {
   return (
-    <Section className="relative min-h-screen bg-black mt-[-1px]">
-      <div className="relative flex flex-col items-center gap-2 h-[840px]">
+    <Section className="relative h-screen bg-black md:py-20 mt-[-1px]">
+      <div className="relative flex flex-col items-center gap-2 h-[840px] md:h-full">
         <img
           src="/images/mobile-hero.png"
           alt="mobile-hero"
-          className="object-contain w-full h-[548px]"
+          className="object-contain w-full h-[548px] md:flex-1"
         />
         <h1 className="font-logo text-[4rem] text-center text-white">Cairo</h1>
         <h3 className="text-brand font-bold text-2xl mb-4">
