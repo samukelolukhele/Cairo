@@ -7,7 +7,7 @@ type SProps = {
 
 const Section = React.forwardRef<HTMLElement, SProps>((props, ref) => {
   return (
-    <section ref={ref} className={`w-full relative py-8 ${props.className}`}>
+    <section ref={ref} className={`w-full relative py-20 ${props.className}`}>
       {props.children}
     </section>
   );

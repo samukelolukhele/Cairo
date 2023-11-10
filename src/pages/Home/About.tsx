@@ -1,40 +1,35 @@
+import Container from "../../components/Container";
 import Section from "../../components/Section";
-import { BsArrowRight } from "react-icons/bs";
 
 const About = () => {
   return (
-    <Section className="relative bg-black min-h-fit text-white py-0 flex items-center justify-end">
-      <img
-        src="/assets/triangle.svg"
-        alt="triangle"
-        className="absolute top-20 right-[50%]"
-      />
-      <img
-        src="/assets/star.svg"
-        alt="star"
-        className="absolute bottom-10 left-0"
-      />
-      <div className="flex flex-col gap-6 w-full left-20 absolute">
-        <h1 className="text-6xl font-bold">Nouveau Couture</h1>
-        <hr className="py-1 border-brand w-1/3" />
-        <p className="text-xl w-1/3 font-light leading-loose">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, sunt
-          provident impedit assumenda velit quae minus maxime aliquid veniam ex
-          officia, praesentium asperiores iure quaerat omnis labore officiis
-          voluptate sed?
-        </p>
-        <button className="w-fit gap-4 flex bg-none border-[1px] border-solid border-white rounded-3xl py-[.1rem] pl-4 justify-between items-center">
-          <p className="text-lg">About Us </p>
-          <div className="p-2 rounded-full bg-white mr-[0.5px] text-black">
-            <BsArrowRight />
+    <Section>
+      <Container className="flex-col text-center gap-16 lg:gap-32">
+        <h3 className="w-full text-2xl font-semibold">What Inspires Us</h3>
+        <div className="flex flex-col md:items-center lg:flex-row gap-16 lg:gap-32">
+          <img
+            src="/images/home-about.png"
+            alt="home-about"
+            className="w-full h-[280px] md:h-full md:w-2/3 lg:h-[481px] object-cover"
+          />
+          <div className="relative flex flex-col gap-8 md:gap-16 md:items-center lg:items-start lg:text-left justify-center">
+            <h1 className="text-3xl font-semibold lg:font-normal lg:text-5xl">
+              Noveau Couture
+            </h1>
+            <p className="md:w-3/4 lg:w-full text-xl lg:text-lg lg:font-light text-left md:text-center lg:text-left">
+              Experience the thrill of wearing quality fashion that is uniquely
+              designed to express your individuality. Our Nouveau Couture
+              collection combines craftsmanship with contemporary aesthetics to
+              create garments that are truly one-of-a-kind.
+            </p>
+            <img
+              src="/assets/star-3.svg"
+              alt="star-3"
+              className="absolute w-[268px] bottom-[-50%] left-[-40%]"
+            />
           </div>
-        </button>
-      </div>
-      <img
-        src="/images/home-about.png"
-        alt="home-about"
-        className="w-[800px] h-full right-0 object-contain"
-      />
+        </div>
+      </Container>
     </Section>
   );
 };

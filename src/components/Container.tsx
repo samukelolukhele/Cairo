@@ -16,7 +16,7 @@ const Container = forwardRef<HTMLDivElement, CProps>(
     return (
       <div
         ref={ref}
-        className={`mx-8 lg:mx-auto md:container flex ${
+        className={`mx-8 lg:mx-auto lg:container flex ${
           flexType == "center"
             ? flexTypes.center
             : flexType == "between"

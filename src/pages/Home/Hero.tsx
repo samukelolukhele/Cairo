@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <section className="relative w-full h-screen lg:max-h-[675px] bg-black text-white">
-      <div className="container h-full">
+      <div className="container !px-0 h-full">
         <i className="absolute text-brand text-3xl top-12 font-semibold">
           #Express <br />{" "}
           <span className="font-[900] not-italic">Yourself</span>
