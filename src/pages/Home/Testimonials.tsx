@@ -1,6 +1,7 @@
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import Container from "../../components/Container";
 import Section from "../../components/Section";
+import { useState } from "react";
 
 const Testimonials = () => {
   const slides = [
@@ -9,7 +10,26 @@ const Testimonials = () => {
       text: "Cairo is my go-to when it comes to ethical clothing. They offer a fantastic selection of stylish and sustainable options that I can feel good about purchasing.",
       name: "Anne Cartwright",
     },
+    {
+      img: "/images/testimonials/Testimonial-2.jpg",
+      text: "Cairo is my go-to when it comes to ethical clothing. They offer a fantastic selection of stylish and sustainable options that I can feel good about purchasing.",
+      name: "Anne Cartwright",
+    },
   ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleNextSlide = () => {
+    if (currentSlide > slides.length - 2) return setCurrentSlide(0);
+
+    return setCurrentSlide((prev) => prev + 1);
+  };
+
+  const handlePreviousSlide = () => {
+    if (currentSlide === 0) return setCurrentSlide(slides.length - 1);
+
+    return setCurrentSlide((prev) => prev - 1);
+  };
 
   return (
     <Section className="bg-[#fdd] py-20">
@@ -18,7 +38,11 @@ const Testimonials = () => {
         {slides.map((slide, i) => {
           return (
             <div
-              className="flex flex-col md:flex-row gap-16 items-center w-full md:max-w-[1130px] "
+              className={`${
+                i === currentSlide
+                  ? "flex opacity-100 translate-x-0 pointer-events-auto"
+                  : "absolute opacity-0 duration-200 translate-x-[30%] !pointer-events-none"
+              } flex flex-col md:flex-row gap-16 items-center w-full md:max-w-[1130px] duration-1000`}
               key={i}
             >
               <img
@@ -39,8 +63,14 @@ const Testimonials = () => {
           );
         })}
         <div className="flex gap-8 items-center justify-center w-full text-4xl ">
-          <MdKeyboardArrowLeft className="hover:bg-black hover:text-white rounded-full" />
-          <MdKeyboardArrowRight className="hover:bg-black hover:text-white rounded-full" />
+          <MdKeyboardArrowLeft
+            onClick={handlePreviousSlide}
+            className="hover:bg-black cursor-pointer hover:text-white rounded-full"
+          />
+          <MdKeyboardArrowRight
+            onClick={handleNextSlide}
+            className="hover:bg-black cursor-pointer hover:text-white rounded-full"
+          />
         </div>
       </Container>
     </Section>
