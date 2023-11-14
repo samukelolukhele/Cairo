@@ -12,8 +12,13 @@ const Testimonials = () => {
     },
     {
       img: "/images/testimonials/Testimonial-2.jpg",
-      text: "Cairo is my go-to when it comes to ethical clothing. They offer a fantastic selection of stylish and sustainable options that I can feel good about purchasing.",
-      name: "Anne Cartwright",
+      text: "Shopping at Cairo makes me feel good about my choices, knowing that I'm supporting a brand that aligns with my values.",
+      name: "Chris Nalewanej",
+    },
+    {
+      img: "/images/testimonials/Testimonial-3.jpg",
+      text: "Cairo knows how to create pieces that make you feel like a million bucks. If you want to turn heads and feel like a true fashionista, Cairo is your go-to brand!",
+      name: "Fiona Davis",
     },
   ];
 
