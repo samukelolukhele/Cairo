@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const MobileHero = () => {
   return (
-    <Section className="relative h-screen bg-black md:py-20 mt-[-1px]">
-      <div className="relative flex flex-col items-center gap-2 h-[840px] md:h-full">
+    <Section className="relative min-h-screen bg-black pb-20 mt-[-1px]">
+      <div className="relative flex flex-col items-center gap-2 h-full">
         <img
           src="/images/mobile-hero.png"
           alt="mobile-hero"

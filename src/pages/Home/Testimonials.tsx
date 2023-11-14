@@ -37,7 +37,7 @@ const Testimonials = () => {
   };
 
   return (
-    <Section className="bg-[#fdd] py-20">
+    <Section className="bg-[#fdd] py-20 overflow-x-hidden">
       <Container className="flex-col items-center gap-8 md:gap-4">
         <h1 className="text-xl text-[#565656]">Testimonials</h1>
         {slides.map((slide, i) => {
