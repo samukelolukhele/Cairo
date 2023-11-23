@@ -1,4 +1,4 @@
-import useIsMobile from "../../utils/hooks/isMobile";
+import useIsMobile from "../../utils/hooks/useIsMobile";
 import About from "./About";
 import Featured from "./Featured";
 import Hero from "./Hero";

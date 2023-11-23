@@ -34,7 +34,7 @@ const UpperFooter = () => {
         },
         {
           title: "Contact",
-          to: "/",
+          to: "/contact",
         },
         {
           title: "Testimonials",
