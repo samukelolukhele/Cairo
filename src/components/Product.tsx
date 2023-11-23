@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { BsCart } from "react-icons/bs";
+
 export interface ProductComponent {
   thumbnail: string;
   title: string;
@@ -6,16 +9,24 @@ export interface ProductComponent {
 }
 
 const Product = ({ thumbnail, title, price, collection }: ProductComponent) => {
+  const [hover, setHover] = useState(false);
+
   return (
-    <div className="flex flex-col text-lg gap-2">
+    <div className="relative flex flex-col text-lg gap-2">
       <div
-        className="w-full shadow-lg h-[400px] bg-no-repeat rounded-3xl object-contain bg-center bg-cover mb-4 flex items-end justify-end"
+        className="w-full shadow-lg h-[400px] md:h-[350px] bg-no-repeat rounded-3xl object-contain bg-top bg-cover mb-4 flex items-end justify-end"
         style={{
           backgroundImage: `url(${thumbnail})`,
         }}
+        onMouseOver={() => setHover(true)}
+        onMouseOut={() => setHover(false)}
       >
-        <button className="rounded-b-3xl py-2 w-full text-center text-white bg-brand">
-          Add To Cart
+        <button
+          className={`${
+            hover ? "opacity-100" : "opacity-0 pointer-events-none"
+          } absolute transition-width duration-500 top-3 right-3 rounded-full text-2xl p-4 w-fit text-center text-white bg-brand`}
+        >
+          <BsCart />
         </button>
       </div>
       <div className="flex flex-col mx-4 gap-1">

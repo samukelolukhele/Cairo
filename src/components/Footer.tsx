@@ -8,25 +8,29 @@ const UpperFooter = () => {
       title: "Shop",
       links: [
         {
+          title: "All",
+          to: "/shop",
+        },
+        {
           title: "Womens",
-          to: "/",
+          to: "/shop",
         },
         {
           title: "Mens",
-          to: "/",
+          to: "/shop",
         },
         {
           title: "Jackets",
-          to: "/",
+          to: "/shop",
         },
         {
           title: "Pants",
-          to: "/",
+          to: "/shop",
         },
       ],
     },
     {
-      title: "About",
+      title: "Support",
       links: [
         {
           title: "About Us",
