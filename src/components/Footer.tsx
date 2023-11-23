@@ -30,7 +30,7 @@ const UpperFooter = () => {
       links: [
         {
           title: "About Us",
-          to: "/",
+          to: "/about",
         },
         {
           title: "Contact",
