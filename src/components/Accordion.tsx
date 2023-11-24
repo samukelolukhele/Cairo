@@ -10,12 +10,12 @@ const Accordion = ({ title, content }: Props) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className="w-full border-b border-gray-700">
+    <div className="w-full border-b border-gray-700 font-default">
       <div
         className="flex justify-between items-center py-3 cursor-pointer"
         onClick={() => setIsActive(!isActive)}
       >
-        <p className="">{title}</p>
+        <p className="font-base">{title}</p>
         <BiDownArrow
           className={`${isActive ? "rotate-180" : "rotate-0"} duration-300`}
         />
@@ -27,7 +27,7 @@ const Accordion = ({ title, content }: Props) => {
             : "absolute z-[-50] opacity-0"
         }  w-full bg-[#111] py-8`}
       >
-        <p className="!font-extralight py-4">{content}</p>
+        <p className="font-default py-4">{content}</p>
       </code>
     </div>
   );
