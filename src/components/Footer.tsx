@@ -44,6 +44,14 @@ const UpperFooter = () => {
           title: "Testimonials",
           to: "/",
         },
+        {
+          title: "Shipping",
+          to: "/support/shipping",
+        },
+        {
+          title: "FAQs",
+          to: "/support/faq",
+        },
       ],
     },
   ];
