@@ -1,6 +1,8 @@
 import Section from "../../components/Section";
 import Container from "../../components/Container";
 import useForm from "../../utils/hooks/useForm";
+import { useState } from "react";
+import Modal from "../../components/Modal";
 
 const Hero = () => {
   const initialState = {
@@ -9,10 +11,18 @@ const Hero = () => {
     message: "",
   };
 
+  const [modal, setModal] = useState(false);
+  const closeModal = () => setModal(false);
+
   const { bind } = useForm(initialState);
+  const handleSubmit = (e: React.ChangeEvent<any>) => {
+    e.preventDefault();
+    setModal(true);
+  };
 
   return (
     <Section className="pt-10">
+      {modal && <Modal close={closeModal} bgClick={closeModal} />}
       <Container className="flex-col-reverse md:flex-row gap-20">
         <div className="flex flex-col justify-center gap-12 md:gap-8 md:w-2/5">
           <div className="flex flex-col gap-4">
@@ -22,7 +32,7 @@ const Hero = () => {
               in touch shortly.
             </p>
           </div>
-          <form action="" className="flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="flex flex-grow gap-4">
               <input
                 type="text"
@@ -47,7 +57,7 @@ const Hero = () => {
               className="px-3 py-4 bg-transparent border-[0.5px] w-full border-black"
             ></textarea>
             <input
-              type="button"
+              type="submit"
               value="Submit"
               className="py-2 px-8 rounded cursor-pointer bg-black text-white w-fit"
             />
