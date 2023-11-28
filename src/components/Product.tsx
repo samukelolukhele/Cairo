@@ -1,15 +1,24 @@
 import { useState } from "react";
 import { BsCart } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 export interface ProductComponent {
   thumbnail: string;
   title: string;
   price: number;
   collection: string;
+  link: string;
 }
 
-const Product = ({ thumbnail, title, price, collection }: ProductComponent) => {
+const Product = ({
+  thumbnail,
+  title,
+  price,
+  collection,
+  link,
+}: ProductComponent) => {
   const [hover, setHover] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="relative flex flex-col text-lg gap-2">
@@ -19,12 +28,13 @@ const Product = ({ thumbnail, title, price, collection }: ProductComponent) => {
           backgroundImage: `url(${thumbnail})`,
         }}
         onMouseOver={() => setHover(true)}
+        onClick={() => navigate(link)}
         onMouseOut={() => setHover(false)}
       >
         <button
           className={`${
             hover ? "opacity-100" : "opacity-0 pointer-events-none"
-          } absolute transition-width duration-500 top-3 right-3 rounded-full text-2xl p-4 w-fit text-center text-white bg-brand`}
+          } absolute z-10 transition-width duration-500 top-3 right-3 rounded-full text-2xl p-4 w-fit text-center text-white bg-brand`}
         >
           <BsCart />
         </button>

@@ -19,7 +19,7 @@ const products: Product[] = [
     id: 1,
     title: "Solid Colar Trench Coat",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi debitis veniam expedita quaerat molestiae architecto veritatis repellendus distinctio voluptates corrupti repellat reiciendis, incidunt nesciunt aut aliquid explicabo esse. Similique, nobis.",
+      "Made with vegan friendly wool this winter coat is both lightweight and comfortable.",
     product_variant: [
       {
         title: "Yellow",
@@ -34,9 +34,15 @@ const products: Product[] = [
         price: 349.99,
       },
       {
-        title: "Blue",
+        title: "Black",
         thumbnail:
-          "https://cbu01.alicdn.com/img/ibank/O1CN019Rg0cS1tYfCOrXvde_!!2214094255914-0-cib.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
+          "https://cbu01.alicdn.com/img/ibank/O1CN01MXl6HF1tYfCNoCMaU_!!2214094255914-0-cib.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
+        price: 349.99,
+      },
+      {
+        title: "Brown",
+        thumbnail:
+          "https://cbu01.alicdn.com/img/ibank/O1CN01KoL4vS1tYfCKy75fw_!!2214094255914-0-cib.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
         price: 349.99,
       },
     ],
@@ -121,7 +127,7 @@ const products: Product[] = [
     images: [
       "https://cc-west-usa.cjdropshipping.com/5acac60b-2888-41cc-9a4a-491a2d4153d8.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
       "https://cc-west-usa.cjdropshipping.com/a8d01817-ad0a-4bd3-9f48-8a1464e87e8f.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
-      "https://cc-west-usa.cjdropshipping.com/2e5f5d43-2492-498d-8818-9af9aec9345b.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
+      "https://cc-west-usa.cjdropshipping.com/60a924d7-5aae-4d0d-8b86-f89ad17b9451.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
       "https://cc-west-usa.cjdropshipping.com/2e5f5d43-2492-498d-8818-9af9aec9345b.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
     ],
     collection: "Women's Jackets",
@@ -133,13 +139,13 @@ const products: Product[] = [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi debitis veniam expedita quaerat molestiae architecto veritatis repellendus distinctio voluptates corrupti repellat reiciendis, incidunt nesciunt aut aliquid explicabo esse. Similique, nobis.",
     product_variant: [
       {
-        title: "Teal",
+        title: "Blue",
         thumbnail:
           "https://cc-west-usa.cjdropshipping.com/20210107/5203457355095.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
         price: 249.99,
       },
       {
-        title: "Silver",
+        title: "Gray",
         thumbnail:
           "https://cc-west-usa.cjdropshipping.com/20210107/19563143281548.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
         price: 249.99,
@@ -190,7 +196,7 @@ const products: Product[] = [
       "https://cc-west-usa.cjdropshipping.com/4f9add78-4877-4fff-80cb-7912cdb998b4.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
       "https://cc-west-usa.cjdropshipping.com/98390a8e-1b6f-4fe7-9013-c6009c1903b5.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
     ],
-    collection: "Men's Jackets",
+    collection: "Men's Shirts",
   },
 ];
 

@@ -24,6 +24,7 @@ const Featured = () => {
                 title={title}
                 price={product_variant[0].price}
                 collection={collection}
+                link={`/shop/${product.id}`}
               />
             );
           })}
