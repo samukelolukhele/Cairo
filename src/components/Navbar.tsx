@@ -16,7 +16,7 @@ const Navbar = () => {
           <a href="/">Women</a>
           <a href="/">Collections</a>
         </ul>
-        <div className="flex gap-12 text-white">
+        <div className="flex items-end gap-12 text-white">
           <BsSearch className="text-xl" />
           <div
             className="relative cursor-pointer"
@@ -29,7 +29,7 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <Cart isOpen={isOpen} setIsOpen={setIsOpen} />
+          {isOpen && <Cart isOpen={isOpen} setIsOpen={setIsOpen} />}
         </div>
       </nav>
     </header>
