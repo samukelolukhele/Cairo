@@ -1,4 +1,3 @@
-import { BsXCircleFill } from "react-icons/bs";
 import { CiSquareMinus, CiSquarePlus } from "react-icons/ci";
 import Image from "./Image";
 import { ReactNode } from "react";
@@ -24,18 +23,18 @@ const CartItem = (): ReactNode => {
   return cartItems.map((item: CartItemsProps, key: number) => {
     return (
       <div className="relative flex gap-4" key={key}>
-        <button
-          className="absolute right-0 top-0 duration-300 hover:scale-110 text-xl"
-          onClick={() => removeFromCart(item.variantTitle, item.id)}
-        >
-          <BsXCircleFill />
-        </button>
         <Image
           imgSrc={item.thumbnail}
           className="!w-[150px] !h-[150px] !flex-grow-0 rounded"
         />
-        <div className="flex flex-col h-full items-center justify-center gap-4">
-          <p className="font-header text-lg w-3/4 mr-auto">{item.title}</p>
+        <div className="flex flex-col h-full items-start justify-center gap-4">
+          <div className="flex flex-col gap-2">
+            <p className="font-header text-lg mr-auto">{item.title}</p>
+            <p className="w-full font-light text-gray-400">${item.price}</p>
+            <p className="font-light text-gray-400 mr-auto w-3/4">
+              {item.variantTitle}
+            </p>
+          </div>
           <div className="flex w-full text-3xl items-center justify-start gap-4">
             <CiSquareMinus
               className="cursor-pointer hover:scale-110 duration-300"
@@ -54,8 +53,13 @@ const CartItem = (): ReactNode => {
                 )
               }
             />
+            <button
+              className="duration-300 hover:scale-110 text-sm underline underline-offset-1"
+              onClick={() => removeFromCart(item.variantTitle, item.id)}
+            >
+              Remove
+            </button>
           </div>
-          <p className="w-full font-light">${item.price}</p>
         </div>
       </div>
     );

@@ -14,13 +14,16 @@ export default {
         default: ["Poppins", "sans-serif"],
       },
       colors: {
-        brand: "#F99D9D",
+        brand: "#e08989",
         brown: {
           500: "#422006",
         },
         cream: {
           500: "#fde68a",
         },
+      },
+      transitionProperty: {
+        expand: "width",
       },
     },
   },
