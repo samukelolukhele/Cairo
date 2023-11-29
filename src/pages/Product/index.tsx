@@ -1,25 +1,38 @@
 import { useParams } from "react-router-dom";
 import products from "../../utils/products";
-import useChangeThumbnali from "../../utils/hooks/useChangeThumbnaill";
+import useChangeThumbnail from "../../utils/hooks/useChangeThumbnail";
 import Container from "../../components/Container";
 import Section from "../../components/Section";
 import Image from "../../components/Image";
 import { useState } from "react";
+import { useShoppingCart } from "../../components/context/ShoppingCartContext";
 
 const Product = () => {
   const { id } = useParams();
   const product = products.find((p) => p.id === Number(id));
-  const { handleThumbnail, currentThumbnail } = useChangeThumbnali(
+  const { handleThumbnail, currentThumbnail } = useChangeThumbnail(
     product?.product_variant[0].thumbnail || ""
   );
-  const [currentVariant, setCurrentVariant] = useState(
-    product?.product_variant[0].title
-  );
+  const [currentVariant, setCurrentVariant] = useState({
+    title: product?.product_variant[0].title || "",
+    thumbnail: product?.product_variant[0].thumbnail || "",
+    price: product?.product_variant[0].price || 0,
+  });
+
+  const { increaseCartQuantity } = useShoppingCart();
 
   const [currentSize, setCurrentSize] = useState("M");
 
-  const handleVariant = (variantName: string, thumbnail: string) => {
-    setCurrentVariant(variantName);
+  const handleVariant = (
+    variantName: string,
+    thumbnail: string,
+    variantPrice: number
+  ) => {
+    setCurrentVariant({
+      title: variantName,
+      thumbnail: thumbnail,
+      price: variantPrice,
+    });
 
     return handleThumbnail(thumbnail);
   };
@@ -77,7 +90,9 @@ const Product = () => {
           <div className="flex flex-col gap-4">
             <p className="text-sm text-gray-700">
               Color:{" "}
-              <span className="font-semibold text-black">{currentVariant}</span>
+              <span className="font-semibold text-black">
+                {currentVariant.title}
+              </span>
             </p>
             <div className="flex gap-4">
               {product?.product_variant.map((variant, index) => {
@@ -92,7 +107,11 @@ const Product = () => {
                     key={index}
                     className={`p-4 rounded cursor-pointer ${variantColor}`}
                     onClick={() =>
-                      handleVariant(variant.title, variant.thumbnail)
+                      handleVariant(
+                        variant.title,
+                        variant.thumbnail,
+                        variant.price
+                      )
                     }
                   />
                 );
@@ -125,7 +144,18 @@ const Product = () => {
             <br /> <br /> Note: This is a demo store.
           </p>
           <div className="flex flex-col gap-4 ">
-            <button className="border-[1px] border-black w-full py-2 hover:bg-brand text-sm font-light  hover:text-whit hover:scale-[103%] duration-300">
+            <button
+              className="border-[1px] border-black w-full py-2 hover:bg-brand text-sm font-light  hover:text-whit hover:scale-[103%] duration-300"
+              onClick={() =>
+                increaseCartQuantity(
+                  product?.id || 0,
+                  currentVariant.thumbnail,
+                  product?.title || "",
+                  currentVariant.price,
+                  currentVariant.title
+                )
+              }
+            >
               Add to cart
             </button>
             <button className="border-0 bg-black hover:bg-brand text-white w-full py-2 text-sm font-light hover:scale-[103%] duration-300">

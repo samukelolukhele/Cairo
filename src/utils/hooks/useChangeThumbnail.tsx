@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useChangeThumbnali = (thumbnail: string) => {
+const useChangeThumbnail = (thumbnail: string) => {
   const [currentThumbnail, setCurrentThumbnail] = useState(thumbnail);
   function handleThumbnail(thumbnailChange: string) {
     return currentThumbnail === thumbnailChange
@@ -11,4 +11,4 @@ const useChangeThumbnali = (thumbnail: string) => {
   return { handleThumbnail, currentThumbnail };
 };
 
-export default useChangeThumbnali;
+export default useChangeThumbnail;
