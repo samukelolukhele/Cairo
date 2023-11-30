@@ -10,6 +10,8 @@ import Shipping from "./pages/Shipping";
 import FAQ from "./pages/FAQ";
 import Product from "./pages/Product";
 import { ShoppingCartProvider } from "./components/context/ShoppingCartContext";
+import Category from "./pages/Shop/Category";
+import Collection from "./pages/Shop/Collection";
 
 function App() {
   return (
@@ -23,6 +25,11 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/shop/:id" element={<Product />} />
+            <Route
+              path="/shop/collection/:collection"
+              element={<Collection />}
+            />
+            <Route path="/shop/category/:category" element={<Category />} />
             <Route path="/support/shipping" element={<Shipping />} />
             <Route path="/support/faq" element={<FAQ />} />
           </Routes>

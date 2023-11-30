@@ -6,9 +6,10 @@ export interface Product {
   images: string[];
   //   size: "S" | "M" | "L" | "XL";
   collection: string;
+  gender: "mens" | "womens";
 }
 
-interface ProductVariant {
+export interface ProductVariant {
   title: string;
   price: number;
   thumbnail: string;
@@ -51,7 +52,8 @@ const products: Product[] = [
       "https://cbu01.alicdn.com/img/ibank/O1CN01MXl6HF1tYfCNoCMaU_!!2214094255914-0-cib.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
       "https://cbu01.alicdn.com/img/ibank/O1CN01KoL4vS1tYfCKy75fw_!!2214094255914-0-cib.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
     ],
-    collection: "Women's Jackets",
+    collection: "Jackets",
+    gender: "womens",
   },
   {
     id: 2,
@@ -70,7 +72,8 @@ const products: Product[] = [
       "https://cc-west-usa.cjdropshipping.com/2052/1809693423320.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
       "https://cc-west-usa.cjdropshipping.com/2052/540433930411.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
     ],
-    collection: "Women's Jackets",
+    collection: "Jackets",
+    gender: "womens",
   },
   {
     id: 3,
@@ -91,7 +94,8 @@ const products: Product[] = [
       "https://cc-west-usa.cjdropshipping.com/63c10a98-f2d2-4b35-8393-1f7ab3b1be18.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
       "https://cc-west-usa.cjdropshipping.com/e147d90b-279a-4aff-978b-ab86df1e648a.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
     ],
-    collection: "Men's Jackets",
+    collection: "Jackets",
+    gender: "mens",
   },
   {
     id: 4,
@@ -130,7 +134,8 @@ const products: Product[] = [
       "https://cc-west-usa.cjdropshipping.com/60a924d7-5aae-4d0d-8b86-f89ad17b9451.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
       "https://cc-west-usa.cjdropshipping.com/2e5f5d43-2492-498d-8818-9af9aec9345b.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
     ],
-    collection: "Women's Jackets",
+    collection: "Jackets",
+    gender: "womens",
   },
   {
     id: 5,
@@ -157,7 +162,8 @@ const products: Product[] = [
       "https://cc-west-usa.cjdropshipping.com/20210107/2253540856817.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
       "https://cc-west-usa.cjdropshipping.com/20210107/2432332989666.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
     ],
-    collection: "Men's Jackets",
+    gender: "mens",
+    collection: "Jackets",
   },
   {
     id: 6,
@@ -196,7 +202,8 @@ const products: Product[] = [
       "https://cc-west-usa.cjdropshipping.com/4f9add78-4877-4fff-80cb-7912cdb998b4.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
       "https://cc-west-usa.cjdropshipping.com/98390a8e-1b6f-4fe7-9013-c6009c1903b5.jpg?x-oss-process=image/resize,m_pad,w_400,h_400",
     ],
-    collection: "Men's Shirts",
+    gender: "mens",
+    collection: "Shirts",
   },
 ];
 

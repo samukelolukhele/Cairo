@@ -20,11 +20,14 @@ const Featured = () => {
             return (
               <Product
                 key={id}
+                id={id}
+                productVariant={product_variant}
                 thumbnail={product_variant[0].thumbnail}
                 title={title}
                 price={product_variant[0].price}
                 collection={collection}
                 link={`/shop/${product.id}`}
+                imgSize="md:h-[400px]"
               />
             );
           })}
