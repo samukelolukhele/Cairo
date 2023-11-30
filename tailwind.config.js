@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   safelist: [
     {
-      pattern: /bg-(yellow|blue|gray|red|brown|cream)-(500)/,
+      pattern: /bg-(yellow|blue|gray|red|brown|cream|emerald)-(500)/,
     },
   ],
   theme: {
