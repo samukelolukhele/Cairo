@@ -13,19 +13,19 @@ const UpperFooter = () => {
         },
         {
           title: "Womens",
-          to: "/shop",
+          to: "/shop/category/womens",
         },
         {
           title: "Mens",
-          to: "/shop",
+          to: "/shop/category/mens",
         },
         {
           title: "Jackets",
-          to: "/shop",
+          to: "/shop/collection/jackets",
         },
         {
-          title: "Pants",
-          to: "/shop",
+          title: "Shirts",
+          to: "/shop/collection/shirts",
         },
       ],
     },

@@ -7,6 +7,7 @@ export interface Product {
   //   size: "S" | "M" | "L" | "XL";
   collection: string;
   gender: "mens" | "womens";
+  featured?: boolean;
 }
 
 export interface ProductVariant {
@@ -54,6 +55,7 @@ const products: Product[] = [
     ],
     collection: "Jackets",
     gender: "womens",
+    featured: true,
   },
   {
     id: 2,
@@ -136,6 +138,7 @@ const products: Product[] = [
     ],
     collection: "Jackets",
     gender: "womens",
+    featured: true,
   },
   {
     id: 5,
@@ -164,6 +167,7 @@ const products: Product[] = [
     ],
     gender: "mens",
     collection: "Jackets",
+    featured: true,
   },
   {
     id: 6,
@@ -251,6 +255,7 @@ const products: Product[] = [
     ],
     gender: "mens",
     collection: "Shirts",
+    featured: true,
   },
   {
     id: 8,
@@ -346,6 +351,7 @@ const products: Product[] = [
     ],
     gender: "mens",
     collection: "Jackets",
+    featured: true,
   },
   {
     id: 11,
@@ -368,6 +374,7 @@ const products: Product[] = [
     ],
     gender: "womens",
     collection: "Shirts",
+    featured: true,
   },
   {
     id: 12,

@@ -37,13 +37,16 @@ const Product = ({
           backgroundImage: `url(${thumbnail})`,
         }}
         onMouseOver={() => setHover(true)}
-        onClick={() => navigate(link)}
         onMouseOut={() => setHover(false)}
       >
+        <div
+          className="absolute z-10 w-full h-full"
+          onClick={() => navigate(link)}
+        />
         <button
           className={`${
             hover ? "opacity-100" : "opacity-0 pointer-events-none"
-          } absolute z-10 duration-500 top-3 right-3 rounded-full text-2xl p-4 w-fit text-center text-white bg-brand`}
+          } absolute z-20 duration-500 top-3 right-3 rounded-full text-2xl p-4 w-fit text-center text-white bg-brand`}
           onClick={() =>
             increaseCartQuantity(
               id,
