@@ -36,7 +36,7 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          {isOpen && <Cart isOpen={isOpen} setIsOpen={setIsOpen} />}
+          <Cart isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
       </nav>
     </header>

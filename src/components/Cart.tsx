@@ -3,6 +3,7 @@ import { BsX } from "react-icons/bs";
 import CartItem from "./CartItem";
 import { useShoppingCart } from "./context/ShoppingCartContext";
 import { useNavigate } from "react-router-dom";
+import { Transition } from "@headlessui/react";
 
 type Props = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -19,24 +20,36 @@ const Cart = ({ setIsOpen, isOpen }: Props) => {
   }
 
   return (
-    <div>
-      {isOpen && (
-        <div
-          className="fixed w-screen h-screen top-0 right-0 left-0 bottom-0 bg-black opacity-50 cursor-pointer z-40"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
-      <div
-        className={`fixed p-4 transition-expand top-0 right-0  bg-black flex flex-col items-center gap-6 h-screen overflow-y-auto ${
-          isOpen
-            ? "opacity-100 w-[330px] md:w-[530px] z-50"
-            : "opacity-0 pointer-events-none w-[100px] z-[-99]"
-        } duration-300 ease-in`}
+    // <div>
+    //   {isOpen && (
+    //     <div
+    //       className="fixed w-screen h-screen top-0 right-0 left-0 bottom-0 bg-black opacity-50 cursor-pointer z-40"
+    //       onClick={() => setIsOpen(false)}
+    //     />
+    //   )}
+    // <Transition
+    //   show={isOpen}
+    //   enter="transition-expand ease-in-out duration-500"
+    //   enterFrom="opacity-0 w-[100px] md:w-0 pointer-events-none z-[-99]"
+    //   enterTo="opacity-100 w-[330px] md:w-96 z-50"
+    //   leave="transition-expand ease-in-out duration-300"
+    //   leaveFrom="opacity-100 w-[330px] md:w-96 z-50"
+    //   leaveTo="opacity-0 w-[100px] md:w-64 pointer-events-none z-[-99]"
+    // >
+    <Transition appear show={isOpen}>
+      <Transition.Child
+        className={`fixed p-4 top-0 right-0 bg-black flex flex-col items-center gap-6 h-screen overflow-y-auto z-50`}
+        enter="ease-in-out duration-700"
+        enterFrom="translate-x-full opacity-0"
+        enterTo="translate-x-0 opacity-100"
+        leave="ease-in-out duration-700"
+        leaveFrom="translate-x-0 opacity-100"
+        leaveTo="translate-x-full opacity-0"
       >
         <div className="flex w-full relative">
           <p className="w-full text-3xl text-gray-400 font-thin">Cart</p>
           <BsX
-            className="text-3xl absolute top-0 right-0 hover:bg-brand duration-300 rounded-full"
+            className="text-3xl absolute top-0 cursor-pointer right-0 hover:bg-brand duration-300 rounded-full"
             onClick={() => setIsOpen(false)}
           />
         </div>
@@ -49,8 +62,8 @@ const Cart = ({ setIsOpen, isOpen }: Props) => {
             </div>
           </div>
         ) : (
-          <p className="text-xl text-center font-thin my-auto">
-            Your cart is currently empty
+          <p className="text-2xl text-center font-thin my-auto">
+            Your cart is empty
           </p>
         )}
         {cartItems.length > 0 && (
@@ -61,8 +74,9 @@ const Cart = ({ setIsOpen, isOpen }: Props) => {
             Checkout
           </button>
         )}
-      </div>
-    </div>
+      </Transition.Child>
+    </Transition>
+    //</div>
   );
 };
 
