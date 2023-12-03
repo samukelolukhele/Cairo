@@ -15,14 +15,20 @@ const Hero = () => {
   const closeModal = () => setModal(false);
 
   const { bind } = useForm(initialState);
-  const handleSubmit = (e: React.ChangeEvent<any>) => {
+  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     setModal(true);
   };
 
   return (
     <Section className="pt-10">
-      {modal && <Modal close={closeModal} bgClick={closeModal} />}
+      {modal && (
+        <Modal close={closeModal} bgClick={closeModal}>
+          {" "}
+          Thank you for getting in contact with us. Our team will reply to you
+          via email shortly.
+        </Modal>
+      )}
       <Container className="flex-col-reverse md:flex-row gap-20">
         <div className="flex flex-col justify-center gap-12 md:gap-8 md:w-2/5">
           <div className="flex flex-col gap-4">

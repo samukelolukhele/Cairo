@@ -1,12 +1,14 @@
 import { AiOutlineClose } from "react-icons/ai";
 import Divider from "./Divider";
+import { ReactNode } from "react";
 
 type MProps = {
   bgClick: React.MouseEventHandler<HTMLDivElement>;
   close: React.MouseEventHandler<HTMLDivElement>;
+  children: ReactNode;
 };
 
-const Modal = ({ bgClick, close }: MProps) => {
+const Modal = ({ bgClick, close, children }: MProps) => {
   return (
     <div className="top-0 right-0 bottom-0 left-0 flex items-center justify-center fixed z-[100]">
       <div
@@ -22,10 +24,7 @@ const Modal = ({ bgClick, close }: MProps) => {
         </div>
         <img src="/assets/logo.svg" alt="logo" className="" />
         <Divider />
-        <p>
-          Thank you for getting in contact with us. Our team will reply to you
-          via email shortly.
-        </p>
+        <p>{children}</p>
       </div>
     </div>
   );
