@@ -1,3 +1,4 @@
+import { Transition } from "@headlessui/react";
 import { useState } from "react";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import { Link } from "react-router-dom";
@@ -27,29 +28,57 @@ const MenuItems = ({ links, close }: MenuProps) => {
   return (
     <div className="flex flex-col">
       {submenuClicked.active && (
-        <div
-          className="flex text-white gap-32"
+        <Transition
           onClick={() => setSubmenuClicked({ id: 0, active: false })}
+          appear
+          show={submenuClicked.active}
+          enter="ease-in-out duration-700"
+          enterFrom="translate-x-[-100%] opacity-0"
+          enterTo="translate-x-0 opacity-100"
+          leave="ease-in-out duration-700"
+          leaveFrom="translate-x-0 opacity-100"
+          leaveTo="translate-x-[-100%] opacity-0"
         >
-          Back <IoMdArrowDropleft />
-        </div>
+          <div className="flex text-white gap-32">
+            Back <IoMdArrowDropleft />
+          </div>
+        </Transition>
       )}
       {links.map((link, i) => {
         if (link.submenu && !submenuClicked.active) {
           return (
-            <div
+            <Transition
               key={i}
-              className="flex text-white gap-8"
               onClick={() => setSubmenuClicked({ id: i, active: true })}
+              appear
+              show={!submenuClicked.active}
+              enter="ease-in-out duration-700"
+              enterFrom="translate-x-[-100%] opacity-0"
+              enterTo="translate-x-0 opacity-100"
+              leave="ease-in-out duration-700"
+              leaveFrom="translate-x-0 opacity-100"
+              leaveTo="translate-x-[-100%] opacity-0"
             >
-              {link.label} <IoMdArrowDropright />
-            </div>
+              <div className="flex text-white gap-8">
+                {link.label} <IoMdArrowDropright />
+              </div>
+            </Transition>
           );
         } else if (link.submenu && submenuClicked.active) {
           return (
-            <>
-              {submenuClicked.id === i &&
-                link.submenu.map((submenu, subId) => {
+            submenuClicked.id === i && (
+              <Transition
+                appear
+                show={submenuClicked.active}
+                className="text-white flex flex-col gap-8"
+                enter="ease-in-out duration-700"
+                enterFrom="translate-x-[-100%] opacity-0"
+                enterTo="translate-x-0 opacity-100"
+                leave="ease-in-out duration-700"
+                leaveFrom="translate-x-0 opacity-100"
+                leaveTo="translate-x-[-100%] opacity-0"
+              >
+                {link.submenu.map((submenu, subId) => {
                   const id = "submenu-" + subId;
                   return (
                     <Link key={id} to={submenu.url} onClick={close}>
@@ -57,13 +86,26 @@ const MenuItems = ({ links, close }: MenuProps) => {
                     </Link>
                   );
                 })}
-            </>
+              </Transition>
+            )
           );
         } else if (!link.submenu && !submenuClicked.active) {
           return (
-            <Link key={i} to={link.url || "/"} onClick={close}>
-              {link.label}
-            </Link>
+            <Transition
+              appear
+              show={!submenuClicked.active}
+              className="text-white flex flex-col gap-8"
+              enter="ease-in-out duration-700"
+              enterFrom="translate-x-[-100%] opacity-0"
+              enterTo="translate-x-0 opacity-100"
+              leave="ease-in-out duration-700"
+              leaveFrom="translate-x-0 opacity-100"
+              leaveTo="translate-x-[-100%] opacity-0"
+            >
+              <Link key={i} to={link.url || "/"} onClick={close}>
+                {link.label}
+              </Link>
+            </Transition>
           );
         }
       })}
