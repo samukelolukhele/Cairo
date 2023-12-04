@@ -1,4 +1,12 @@
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import Typewriter from "../../components/Typewriter";
+
 const Hero = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <section className="relative w-full h-screen lg:max-h-[675px] bg-black text-white">
       <div className="container !px-0 h-full">
@@ -8,7 +16,7 @@ const Hero = () => {
         </i>
         <div className="relative flex flex-col items-center justify-center w-full h-full">
           <h1 className="absolute bottom-[-40%] opacity-10 font-logo text-[31rem]">
-            Cairo
+            <Typewriter text="Cairo" delay={500} />
           </h1>
           <h1 className="absolute top-[10%] text-6xl text-center font-black">
             <img
@@ -19,6 +27,8 @@ const Hero = () => {
             Show off your best self
           </h1>
           <img
+            data-aos="zoom-in-up"
+            data-aos-duration="1000"
             src="/images/hero-img.png"
             alt="home_hero"
             className="relative z-[2] h-[34.5rem] mt-auto object-contain w-full"
