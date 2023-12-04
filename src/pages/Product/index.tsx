@@ -42,7 +42,7 @@ const Product = () => {
   return (
     <Section className="py-5 md:py-20">
       <Container className="gap-8 md:gap-20 flex-col lg:flex-row">
-        <div className="hidden md:flex flex-col gap-4">
+        <div className="hidden lg:flex flex-col gap-4">
           {product?.images.map((image, key) => {
             return (
               <Image
@@ -63,7 +63,7 @@ const Product = () => {
             imgSrc={currentThumbnail}
           />
         </div>
-        <div className="flex md:hidden gap-4">
+        <div className="flex lg:hidden gap-4">
           {product?.images.map((image, key) => {
             return (
               <Image
