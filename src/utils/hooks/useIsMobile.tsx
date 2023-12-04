@@ -13,8 +13,8 @@ const useIsMobile = () => {
     };
   }, []);
 
-  const isMobile = width <= 768;
-  const isTablet = width <= 1024;
+  const isMobile = width <= 760;
+  const isTablet = width <= 1024 && width > 760;
   return { isMobile, isTablet };
 };
 
