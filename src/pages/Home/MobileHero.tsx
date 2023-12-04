@@ -1,10 +1,11 @@
+import Container from "../../components/Container";
 import Section from "../../components/Section";
 import { Link } from "react-router-dom";
 
 const MobileHero = () => {
   return (
     <Section className="relative min-h-screen bg-black pb-20 mt-[-1px]">
-      <div className="relative flex flex-col items-center gap-2 h-full">
+      <Container className="relative flex flex-col items-center gap-2 h-full">
         <img
           src="/images/mobile-hero.png"
           alt="mobile-hero"
@@ -16,11 +17,11 @@ const MobileHero = () => {
         </h3>
         <Link
           to="/"
-          className="py-2 text-center w-[229px] text-2xl rounded-3xl bg-white font-light"
+          className="py-1 text-center w-[229px] text-2xl rounded-3xl bg-white font-light"
         >
           Get Started
         </Link>
-      </div>
+      </Container>
     </Section>
   );
 };

@@ -8,10 +8,10 @@ import Newsletter from "./Newsletter";
 import Testimonials from "./Testimonials";
 
 const Home = () => {
-  const { isTablet } = useIsMobile();
+  const { isTablet, isMobile } = useIsMobile();
   return (
     <>
-      {isTablet ? <MobileHero /> : <Hero />}
+      {isTablet || isMobile ? <MobileHero /> : <Hero />}
       <Info />
       <Featured />
       <Testimonials />
