@@ -1,4 +1,9 @@
-import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
+import {
+  BsFacebook,
+  BsInstagram,
+  BsPinterest,
+  BsTwitter,
+} from "react-icons/bs";
 import Container from "./Container";
 import { Link } from "react-router-dom";
 
@@ -59,10 +64,19 @@ const UpperFooter = () => {
           This is a concept e-commerce store that serves a proof of concept. No
           data is saved on a database and no actual transactions take place.
         </p>
-        <div className="flex gap-8 text-4xl lg:text-2xl w-fit">
-          <BsFacebook />
-          <BsInstagram />
-          <BsTwitter />
+        <div className="flex gap-8 text-4xl lg:text-2xl w-fit [&>*]:cursor-pointer">
+          <BsFacebook
+            onClick={() => window.open("https://facebook.com", "_blank")}
+          />
+          <BsInstagram
+            onClick={() => window.open("https://instagram.com", "_blank")}
+          />
+          <BsTwitter
+            onClick={() => window.open("https://twitter.com", "_blank")}
+          />
+          <BsPinterest
+            onClick={() => window.open("https://pinterest.com", "_blank")}
+          />
         </div>
       </div>
       {footerElements.map((element, i) => {
@@ -89,7 +103,7 @@ const LowerFooter = () => {
   return (
     <div className="flex justify-between items-center py-4 text-sm">
       <p>© 2023 Cairo. All rights reserved </p>
-      <p className="text-right">Designed by S.K Lukhele</p>
+      <p className="text-right">Designed & Developed by S.K Lukhele</p>
     </div>
   );
 };

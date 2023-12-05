@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsX } from "react-icons/bs";
 import CartItem from "./CartItem";
 import { useShoppingCart } from "./context/ShoppingCartContext";
-import { useNavigate } from "react-router-dom";
 import { Transition } from "@headlessui/react";
+import Modal from "./Modal";
 
 type Props = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -12,12 +12,14 @@ type Props = {
 
 const Cart = ({ setIsOpen, isOpen }: Props) => {
   const { cartItems, cartTotal } = useShoppingCart();
-  const navigate = useNavigate();
+  const [modal, setModal] = useState(false);
 
   function handleCheckout() {
     setIsOpen(false);
-    return navigate("/shop/checkout");
+    return setModal(true);
   }
+
+  const closeModal = () => setModal(false);
 
   return (
     <div className="absolute">
@@ -26,6 +28,14 @@ const Cart = ({ setIsOpen, isOpen }: Props) => {
           className="fixed w-screen h-screen top-0 right-0 left-0 bottom-0 bg-black opacity-50 cursor-pointer z-40"
           onClick={() => setIsOpen(false)}
         />
+      )}
+      {modal && (
+        <Modal bgClick={closeModal} close={closeModal}>
+          {" "}
+          Thank you for previewing this site. If you would like to work together
+          you can get in contact with me via email{" "}
+          <span className="font-semibold">kelo.lukhele@gmail.com</span>
+        </Modal>
       )}
       <Transition appear show={isOpen}>
         <Transition.Child

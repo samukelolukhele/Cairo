@@ -23,10 +23,12 @@ const Hero = () => {
               data-aos-delay="400"
               data-aos-anchor="#about-main"
             >
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque
-              est illo fugit culpa ipsum hic necessitatibus eveniet eligendi
-              amet voluptatem, consequatur ullam ad vero quod possimus nemo
-              recusandae maiores magnam.
+              Cairo started with a passion for high fashion & design and became
+              something much more important. Cairo became a way to purchase
+              quality clothes ethically by ensuring good working conditions &
+              eco friendly materials. We take pride in providing guilt free
+              fashion & we are always looking for ways to make a positive impact
+              on the fashion industry.
             </p>
           </div>
           <div className="flex flex-col gap-4 md:flex-row justify-between">

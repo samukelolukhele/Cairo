@@ -6,6 +6,7 @@ import Section from "../../components/Section";
 import Image from "../../components/Image";
 import { useState } from "react";
 import { useShoppingCart } from "../../components/context/ShoppingCartContext";
+import Modal from "../../components/Modal";
 
 const Product = () => {
   const { id } = useParams();
@@ -22,6 +23,9 @@ const Product = () => {
   const { increaseCartQuantity } = useShoppingCart();
 
   const [currentSize, setCurrentSize] = useState("M");
+  const [modal, setModal] = useState(false);
+
+  const closeModal = () => setModal(false);
 
   const handleVariant = (
     variantName: string,
@@ -41,6 +45,13 @@ const Product = () => {
 
   return (
     <Section className="py-5 md:py-20">
+      {modal && (
+        <Modal close={closeModal} bgClick={closeModal}>
+          Thank you for previewing this site. If you would like to work together
+          you can get in contact with me via email{" "}
+          <span className="font-semibold">kelo.lukhele@gmail.com</span>
+        </Modal>
+      )}
       <Container className="gap-8 md:gap-20 flex-col lg:flex-row">
         <div className="hidden lg:flex flex-col gap-4">
           {product?.images.map((image, key) => {
@@ -140,8 +151,8 @@ const Product = () => {
             </div>
           </div>
           <p className="font-light text-base">
-            {product?.description}
-            <br /> <br /> Note: This is a demo store.
+            This is a demonstration product that is not purchasble. This product
+            and description would be replaced by your own.
           </p>
           <div className="flex flex-col gap-4 ">
             <button
@@ -158,7 +169,7 @@ const Product = () => {
             >
               Add to cart
             </button>
-            <button className="border-0 bg-black hover:bg-brand text-white w-full py-2 text-sm font-light hover:scale-[103%] duration-300">
+            <button className="border-0 bg-black hover:bg-brand text-white w-full py-2 text-sm font-light hover:scale-[103%] duration-300" onClick={() => setModal(true)}>
               Buy now
             </button>
           </div>
