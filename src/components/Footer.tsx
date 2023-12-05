@@ -60,7 +60,7 @@ const UpperFooter = () => {
     <div className="py-12 flex flex-col lg:flex-row gap-20 border-y-[1px] border-black">
       <div className="flex flex-col w-full lg:w-min lg:flex-shrink gap-6">
         <h1 className="font-logo text-6xl w-full">Cairo</h1>
-        <p className="text-xl w-full text-[#888] md:w-2/4 lg:w-[310px] lg:text-base">
+        <p className="text-xl font-light w-full text-[#888] md:w-2/4 lg:w-[310px] lg:text-base">
           This is a concept e-commerce store that serves a proof of concept. No
           data is saved on a database and no actual transactions take place.
         </p>
@@ -83,7 +83,7 @@ const UpperFooter = () => {
         return (
           <div className="flex flex-col gap-8" key={i}>
             <h1 className="text-4xl lg:text-2xl font-bold">{element.title}</h1>
-            <div className="flex flex-col gap-4 text-2xl lg:text-base">
+            <div className="flex flex-col gap-4 text-xl md:text-2xl lg:text-base">
               {element.links.map((link, i) => {
                 return (
                   <Link to={link.to} key={"link-" + i}>

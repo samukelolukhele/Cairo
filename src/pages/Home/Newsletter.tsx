@@ -21,7 +21,9 @@ const Newsletter = () => {
       )}
       <Container className="flex-col lg:flex-row items-center lg:justify-between gap-8 lg:gap-16 text-center">
         <div className="flex flex-col items-center lg:items-start gap-4 md:gap-6 lg:text-left">
-          <h1 className="text-4xl font-semibold md:font-bold">Keep In Touch</h1>
+          <h1 className="text-3xl md:text-4xl font-semibold md:font-bold">
+            Keep In Touch
+          </h1>
           <hr className="border-[1px] border-black w-2/3" />
           <p className="text-xl">
             Sign up to our newsletter and up to date on our latest deals

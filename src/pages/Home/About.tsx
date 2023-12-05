@@ -13,7 +13,7 @@ const About = () => {
             data-aos="zoom-in-down"
             data-aos-duration="1300"
             data-aos-anchor="#home-about"
-            src="/images/home-about.png"
+            src="/images/home-about.webp"
             alt="home-about"
             className="w-full h-[280px] md:h-full md:w-2/3 lg:h-[481px] object-contain"
           />

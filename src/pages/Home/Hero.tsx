@@ -25,7 +25,7 @@ const Hero = () => {
           <img
             data-aos="zoom-in-up"
             data-aos-duration="1000"
-            src="/images/hero-img.png"
+            src="/images/hero-img.webp"
             alt="home_hero"
             className="relative z-[2] h-[34.5rem] mt-auto object-contain w-full"
           />

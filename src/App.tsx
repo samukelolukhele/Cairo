@@ -1,6 +1,11 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  ScrollRestoration,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import About from "./pages/About";
@@ -15,6 +20,7 @@ import Collection from "./pages/Shop/Collection";
 import "aos/dist/aos.css";
 import Featured from "./pages/Home/Featured";
 import CategoryCollection from "./pages/Shop/Collection/CategoryCollection";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -22,6 +28,7 @@ function App() {
       <Router>
         <ShoppingCartProvider>
           <Navbar />
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

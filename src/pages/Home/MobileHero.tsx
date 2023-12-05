@@ -10,7 +10,7 @@ const MobileHero = () => {
     <Section className="relative min-h-screen bg-black pb-20 mt-[-1px]">
       <Container className="relative flex flex-col items-center gap-2 ">
         <img
-          src="/images/mobile-hero.png"
+          src="/images/mobile-hero.webp"
           alt="mobile-hero"
           className="object-contain w-full h-[458px] md:flex-1"
         />

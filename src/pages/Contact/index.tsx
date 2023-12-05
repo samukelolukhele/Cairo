@@ -83,14 +83,14 @@ const Contact = () => {
             data-aos="fade-up"
             data-aos-duration="2000"
             data-aos-anchor="#contact-main"
-            className="absolute top-0 left-0 w-3/5 h-[400px] bg-[url('/images/contact-hero-2.webp')] bg-cover bg-no-repeat bg-top rounded-[8rem]"
+            className="absolute z-10 top-0 left-0 w-3/5 h-[400px] bg-[url('/images/contact-hero-2.webp')] bg-cover bg-no-repeat bg-top rounded-[8rem]"
           />
           <div
             data-aos="fade-up"
             data-aos-duration="2000"
             data-aos-delay="400"
             data-aos-anchor="#contact-main"
-            className="absolute bottom-0 right-0 w-3/5 h-[400px] bg-[url('/images/contact-hero.webp')] bg-cover bg-no-repeat bg-center rounded-[8rem]"
+            className="absolute z-10 bottom-0 right-0 w-3/5 h-[400px] bg-[url('/images/contact-hero.webp')] bg-cover bg-no-repeat bg-center rounded-[8rem]"
           />
         </div>
         <img
