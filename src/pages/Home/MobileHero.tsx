@@ -25,10 +25,10 @@ const MobileHero = () => {
           <Typewriter text="#Express Yourself" delay={300} />
         </h3>
         <Link
-          to="/"
+          to="/shop"
           className="py-2 text-center w-[229px] text-xl rounded-3xl bg-white font-light"
         >
-          Get Started
+          Shop Now
         </Link>
       </Container>
     </Section>
