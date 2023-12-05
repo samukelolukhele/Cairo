@@ -12,6 +12,7 @@ import Product from "./pages/Product";
 import { ShoppingCartProvider } from "./components/context/ShoppingCartContext";
 import Category from "./pages/Shop/Category";
 import Collection from "./pages/Shop/Collection";
+import "aos/dist/aos.css";
 
 function App() {
   return (

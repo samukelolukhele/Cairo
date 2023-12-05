@@ -4,9 +4,9 @@ import PageInfo from "../../components/PageInfo";
 const FAQ = () => {
   const accordions = [
     {
-      title: "Vegan Friendly",
+      title: "Eco Friendly",
       content:
-        "Our clothes use only the most eco friendly ensuring we leave a beautiful planet behind.",
+        "Our clothes use only the most eco friendly production methods & materials ensuring we sustain a beautiful planet for us and future genrations.",
     },
     {
       title: "Shipping Times",

@@ -13,10 +13,10 @@ const PageInfo = ({ children, pageTitle, pageDescription }: Props) => {
     <Section>
       <Container className="flex flex-col font-light text-xl gap-8">
         <div className="flex flex-col gap-8">
-          <h1 className="font-bold">{pageTitle}</h1>
+          <h1 className="font-bold text-3xl">{pageTitle}</h1>
           <p>{pageDescription}</p>
         </div>
-        <code className="flex flex-col">{children}</code>
+        <div className="flex flex-col">{children}</div>
       </Container>
     </Section>
   );

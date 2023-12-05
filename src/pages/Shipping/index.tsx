@@ -33,7 +33,7 @@ const Shipping = () => {
     <InfoPage
       pageDescription="At Cairo, we strive to provide you with a seamless and delightful
     shopping experience, including our shipping process. We understand
-    the excitement of receiving your sustainable jewelry pieces, and we
+    the excitement of receiving your purchased items, and we
     want to ensure that they reach you safely and efficiently. Here's
     everything you need to know about our shipping"
       pageTitle="Shipping"

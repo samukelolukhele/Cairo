@@ -41,10 +41,6 @@ const UpperFooter = () => {
           to: "/contact",
         },
         {
-          title: "Testimonials",
-          to: "/",
-        },
-        {
           title: "Shipping",
           to: "/support/shipping",
         },

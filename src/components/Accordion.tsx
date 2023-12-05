@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BiDownArrow } from "react-icons/bi";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 type Props = {
   title: string;
@@ -15,20 +15,20 @@ const Accordion = ({ title, content }: Props) => {
         className="flex justify-between items-center py-3 cursor-pointer"
         onClick={() => setIsActive(!isActive)}
       >
-        <p className="font-base">{title}</p>
-        <BiDownArrow
+        <p className="font-semibold">{title}</p>
+        <IoMdArrowDropdown
           className={`${isActive ? "rotate-180" : "rotate-0"} duration-300`}
         />
       </div>
-      <code
+      <div
         className={`${
           isActive
             ? "z-0 relative opacity-100 duration-300 ease-in"
             : "absolute z-[-50] opacity-0"
-        }  w-full bg-[#111] py-8`}
+        }  w-full py-4`}
       >
-        <p className="font-default py-4">{content}</p>
-      </code>
+        <p className="font-default pb-4">{content}</p>
+      </div>
     </div>
   );
 };

@@ -6,9 +6,9 @@ import Product from "../../components/Product";
 
 const Featured = () => {
   return (
-    <Section className="z-10 py-20">
+    <Section className="z-10 py-10 md:py-20">
       <Container className="flex-col gap-20">
-        <div className="flex justify-between text-2xl font-semibold w-full">
+        <div className="md:flex justify-between text-2xl font-semibold w-full hidden ">
           <p>See What's New</p>
           <Link className="text-black underline" to="/shop">
             Shop Now

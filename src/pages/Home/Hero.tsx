@@ -1,12 +1,8 @@
-import Aos from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 import Typewriter from "../../components/Typewriter";
+import useAos from "../../utils/hooks/useAos";
 
 const Hero = () => {
-  useEffect(() => {
-    Aos.init();
-  }, []);
+  useAos();
   return (
     <section className="relative w-full h-screen lg:max-h-[675px] bg-black text-white">
       <div className="container !px-0 h-full">

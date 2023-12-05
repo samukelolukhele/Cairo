@@ -1,14 +1,28 @@
 import Section from "../../components/Section";
 import Container from "../../components/Container";
+import useAos from "../../utils/hooks/useAos";
 
-const About = () => {
+const Hero = () => {
+  useAos();
   return (
-    <Section>
+    <Section id="about-main">
       <Container className="flex-col-reverse md:flex-row gap-20">
         <div className="flex flex-col justify-center gap-12 md:gap-20">
           <div className="flex flex-col gap-4">
-            <h1 className="text-4xl font-bold">Our Story</h1>
-            <p>
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-anchor="#about-main"
+              className="text-4xl"
+            >
+              Our Story
+            </h1>
+            <p
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="400"
+              data-aos-anchor="#about-main"
+            >
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque
               est illo fugit culpa ipsum hic necessitatibus eveniet eligendi
               amet voluptatem, consequatur ullam ad vero quod possimus nemo
@@ -33,6 +47,9 @@ const About = () => {
           </div>
         </div>
         <img
+          data-aos="fade-up"
+          data-aos-duration="1300"
+          data-aos-anchor="#about-main"
           src="/images/about-hero.webp"
           alt="hero"
           className="w-full h-[300px] md:w-2/4 md:h-[500px] object-cover rounded-3xl"
@@ -42,4 +59,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Hero;
