@@ -22,7 +22,7 @@ const MobileHero = () => {
           Cairo
         </h1>
         <h3 className="text-brand font-bold text-2xl mb-4">
-          <Typewriter text="#Express Yourself" delay={300} />
+          <Typewriter text="#Express Yourself" delay={200} />
         </h3>
         <Link
           to="/shop"

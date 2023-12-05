@@ -3,6 +3,7 @@ import { BsCart } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "./context/ShoppingCartContext";
 import { ProductVariant } from "../utils/products";
+import useIsMobile from "../utils/hooks/useIsMobile";
 
 export interface ProductComponent {
   id: number;
@@ -28,6 +29,13 @@ const Product = ({
   const [hover, setHover] = useState(false);
   const navigate = useNavigate();
   const { increaseCartQuantity } = useShoppingCart();
+  const { isMobile, isTablet } = useIsMobile();
+
+  const handleHover = (active: boolean) => {
+    if (isTablet || isMobile) return setHover(false);
+
+    return setHover(active);
+  };
 
   return (
     <div className="relative flex flex-col text-lg gap-2">
@@ -36,11 +44,11 @@ const Product = ({
         style={{
           backgroundImage: `url(${thumbnail})`,
         }}
-        onMouseOver={() => setHover(true)}
-        onMouseOut={() => setHover(false)}
+        onMouseOver={() => handleHover(true)}
+        onMouseOut={() => handleHover(false)}
       >
         <div
-          className={`absolute w-full ${imgSize} md:h-[300px]`}
+          className={`absolute w-full ${imgSize} h-[400px] md:h-[300px]`}
           onClick={() => navigate(link)}
         />
         <button
