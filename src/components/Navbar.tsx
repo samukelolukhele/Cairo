@@ -123,7 +123,14 @@ const Navbar = () => {
                     setSubmenu((prev) => ({ id: i, active: !prev.active }))
                   }
                 >
-                  {link.label} <IoMdArrowDropdown />
+                  {link.label}{" "}
+                  <IoMdArrowDropdown
+                    className={`${
+                      submenu.id === i && submenu.active
+                        ? "rotate-180 bg-brand"
+                        : "rotate-0"
+                    } duration-300 ease-in`}
+                  />
                 </div>
               );
           })}

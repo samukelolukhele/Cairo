@@ -12,7 +12,7 @@ const Hero = () => {
         </i>
         <div className="relative flex flex-col items-center justify-center w-full h-full">
           <h1 className="absolute bottom-[-40%] opacity-10 font-logo text-[31rem]">
-            <Typewriter text="Cairo" delay={500} />
+            <Typewriter text="Cairo" delay={200} />
           </h1>
           <h1 className="absolute top-[10%] text-6xl text-center font-black">
             <img
