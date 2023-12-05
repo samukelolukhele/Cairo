@@ -31,14 +31,14 @@ const Newsletter = () => {
           <input
             type="email"
             name="email"
-            className="px-4 w-[230px] lg:w-[421px] text-xl flex-1 py-2 border-black border-[1px]"
+            className="px-4 w-[200px] lg:w-[421px] md:text-xl flex-shrink md:flex-1 py-2 border-black border-[1px]"
             placeholder="Email Address"
           />
           <input
             type="submit"
             name="subscribe"
             value="Subscribe"
-            className="bg-black text-lg text-white px-4 text-center cursor-pointer"
+            className="bg-black md:text-lg text-white px-4 text-center cursor-pointer"
           />
         </form>
       </Container>
