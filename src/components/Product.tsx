@@ -40,7 +40,7 @@ const Product = ({
         onMouseOut={() => setHover(false)}
       >
         <div
-          className="absolute z-10 w-full h-full"
+          className={`absolute w-full ${imgSize} md:h-[300px]`}
           onClick={() => navigate(link)}
         />
         <button

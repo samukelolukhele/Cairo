@@ -13,6 +13,8 @@ import { ShoppingCartProvider } from "./components/context/ShoppingCartContext";
 import Category from "./pages/Shop/Category";
 import Collection from "./pages/Shop/Collection";
 import "aos/dist/aos.css";
+import Featured from "./pages/Home/Featured";
+import CategoryCollection from "./pages/Shop/Collection/CategoryCollection";
 
 function App() {
   return (
@@ -25,10 +27,15 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/shop/featured" element={<Featured />} />
             <Route path="/shop/:id" element={<Product />} />
             <Route
               path="/shop/collection/:collection"
               element={<Collection />}
+            />
+            <Route
+              path="/shop/category/:category/collection/:collection"
+              element={<CategoryCollection />}
             />
             <Route path="/shop/category/:category" element={<Category />} />
             <Route path="/support/shipping" element={<Shipping />} />

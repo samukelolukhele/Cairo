@@ -70,7 +70,7 @@ const MenuItems = ({ links, close }: MenuProps) => {
               <Transition
                 appear
                 show={submenuClicked.active}
-                className="text-white flex flex-col gap-8"
+                className="text-white flex flex-col lg:flex-row gap-8"
                 enter="ease-in-out duration-700"
                 enterFrom="translate-x-[-100%] opacity-0"
                 enterTo="translate-x-0 opacity-100"
